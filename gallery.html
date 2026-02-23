@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Tiles | Morbi Tiles Catalogue</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .listing-container {
+            display: flex;
+            padding: 40px 5%;
+            gap: 30px;
+        }
+
+        .sidebar {
+            flex: 0 0 250px;
+            background: var(--bg-soft);
+            padding: 20px;
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        .sidebar h4 {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .filter-group {
+            margin-bottom: 25px;
+        }
+
+        .filter-group label {
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+        .listing-main {
+            flex: 1;
+        }
+
+        .listing-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .listing-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <div class="header-logo">
+                <a href="index.html"><img src="assets/logo.png" alt="Morbi Tiles Logo" class="main-logo"></a>
+            </div>
+            <div class="header-search">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="Search for tiles, colors, sizes...">
+            </div>
+            <div class="header-actions">
+                <div class="action-item"><i class="fa fa-calculator"></i><span>Calculator</span></div>
+                <div class="action-item"><i class="fa fa-heart"></i><span>Wishlist</span></div>
+                <div class="action-item"><i class="fa fa-shopping-cart"></i><span>Cart</span></div>
+                <a href="#" class="btn-signin">Sign In</a>
+            </div>
+        </div>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item">All Tiles</li>
+                <li class="nav-item">Floor Tiles</li>
+                <li class="nav-item">Wall Tiles</li>
+                <li class="nav-item">Bathroom Tiles</li>
+                <li class="nav-item">Kitchen Tiles</li>
+                <li class="nav-item">Living Room</li>
+                <li class="nav-item">Outdoor Tiles</li>
+                <li class="nav-item">Parking Tiles</li>
+                <li class="nav-item">Ceramic Tiles</li>
+                <li class="nav-item">Vitrified Tiles</li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="listing-container">
+            <aside class="sidebar">
+                <h4>Filters</h4>
+                <div class="filter-group">
+                    <h5>CATEGORIES</h5>
+                    <label><input type="checkbox"> Vitrified Tiles</label>
+                    <label><input type="checkbox"> Ceramic Tiles</label>
+                    <label><input type="checkbox"> Digital Wall</label>
+                    <label><input type="checkbox"> Double Charged</label>
+                </div>
+                <div class="filter-group">
+                    <h5>SIZE</h5>
+                    <label><input type="checkbox"> 600x600 mm</label>
+                    <label><input type="checkbox"> 600x1200 mm</label>
+                    <label><input type="checkbox"> 800x1600 mm</label>
+                </div>
+                <div class="filter-group">
+                    <h5>FINISH</h5>
+                    <label><input type="checkbox"> High Gloss</label>
+                    <label><input type="checkbox"> Matte</label>
+                    <label><input type="checkbox"> Satin</label>
+                    <label><input type="checkbox"> Rustic</label>
+                </div>
+            </aside>
+
+            <div class="listing-main">
+                <div class="listing-header">
+                    <h2>Our Tile Catalogue</h2>
+                    <select style="padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+                        <option>Sort by: Popularity</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Newest First</option>
+                    </select>
+                </div>
+
+                <div class="product-grid">
+                    <!-- Repeat Product Cards -->
+                    <div class="p-card">
+                        <div class="p-img"><img src="assets/tile_marble_carrara.png" alt="Royal Carrara"></div>
+                        <div class="p-info">
+                            <h4>Royal Carrara Vitrified</h4>
+                            <div class="p-price">₹ 42.00 <span>/ sq.ft</span></div>
+                            <div class="p-actions">
+                                <div class="btn-sm">Quick View</div>
+                                <div class="btn-sm btn-primary-sm">Inquire</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-card">
+                        <div class="p-img"><img src="assets/tile_slate_black.png" alt="Noir Slate"></div>
+                        <div class="p-info">
+                            <h4>Noir Slate Digital</h4>
+                            <div class="p-price">₹ 38.00 <span>/ sq.ft</span></div>
+                            <div class="p-actions">
+                                <div class="btn-sm">Quick View</div>
+                                <div class="btn-sm btn-primary-sm">Inquire</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- More mock cards for the look -->
+                    <div class="p-card">
+                        <div class="p-img"><img src="assets/tile_wood_oak.png" alt="Vintage Oak"></div>
+                        <div class="p-info">
+                            <h4>Vintage Oak wood</h4>
+                            <div class="p-price">₹ 55.00 <span>/ sq.ft</span></div>
+                            <div class="p-actions">
+                                <div class="btn-sm">Quick View</div>
+                                <div class="btn-sm btn-primary-sm">Inquire</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-card">
+                        <div class="p-img"><img src="assets/tile_artisan_emerald.png" alt="Emerald"></div>
+                        <div class="p-info">
+                            <h4>Emerald Artisan</h4>
+                            <div class="p-price">₹ 32.00 <span>/ sq.ft</span></div>
+                            <div class="p-actions">
+                                <div class="btn-sm">Quick View</div>
+                                <div class="btn-sm btn-primary-sm">Inquire</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="f-grid">
+            <div class="f-col">
+                <div class="footer-logo-container"><img src="assets/logo.png" alt="Morbi Tiles Logo" class="footer-logo"></div>
+                <p>MorbiTiles.store brings the tiles capital of India – Morbi, Gujarat – directly to you.</p>
+            </div>
+            <div class="f-col">
+                <h4>Quick Links</h4>
+                <ul class="f-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Catalogue</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="f-col">
+                <h4>Policy</h4>
+                <ul class="f-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="f-col">
+                <h4>Visit Us</h4>
+                <p>At: Old Ghuntu Road, Near Ghuntu village,</p>
+                <p>Ta: Morbi, Dist: Morbi, Gujarat</p>
+            </div>
+        </div>
+        <div class="f-bottom">
+            &copy; 2026 Morbi Tiles. All rights reserved.
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>

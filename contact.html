@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Morbi Tiles</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .contact-section {
+            padding: 60px 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .info-card {
+            background: var(--bg-soft);
+            padding: 40px;
+            border-radius: 12px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .c-form input,
+        .c-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <div class="header-logo"><a href="index.html"><img src="assets/logo.png" alt="Morbi Tiles Logo"
+                        class="main-logo"></a></div>
+            <div class="header-search"><i class="fa fa-search"></i><input type="text" placeholder="Search..."></div>
+            <div class="header-actions">
+                <div class="action-item"><i class="fa fa-heart"></i><span>Wishlist</span></div>
+                <div class="action-item"><i class="fa fa-shopping-cart"></i><span>Cart</span></div>
+                <a href="#" class="btn-signin">Sign In</a>
+            </div>
+        </div>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item">All Tiles</li>
+                <li class="nav-item">Floor</li>
+                <li class="nav-item">Wall</li>
+                <li class="nav-item">Bathroom</li>
+                <li class="nav-item">Kitchen</li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <div class="contact-form-area">
+                <h2>Get a Call Back</h2>
+                <p style="margin-bottom: 30px; opacity: 0.6;">Leave your details and our tile experts will contact you
+                    shortly.</p>
+                <form class="c-form">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="text" placeholder="Mobile Number" required>
+                    <input type="email" placeholder="Email Address">
+                    <textarea placeholder="Tell us about your requirement (Size, Quantity, Type)..."
+                        style="height: 120px;"></textarea>
+                    <button type="submit" class="btn-signin" style="width: 100%; padding: 15px;">Send Inquiry</button>
+                </form>
+            </div>
+            <div class="info-card">
+                <h2>Contact Information</h2>
+                <div style="width: 40px; height: 3px; background: var(--secondary); margin: 15px 0 30px;"></div>
+                <div class="info-item">
+                    <i class="fa fa-location-dot"></i>
+                    <div>
+                        <h4>Factory Outlet</h4>
+                        <p>At: Old Ghuntu Road, Near Ghuntu village,<br>Ta: Morbi, Dist: Morbi, Gujarat - 363641</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fa fa-phone"></i>
+                    <div>
+                        <h4>Call / WhatsApp</h4>
+                        <p>+91 82380 44415</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fa fa-envelope"></i>
+                    <div>
+                        <h4>Email Us</h4>
+                        <p>info@morbitiles.store</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="f-grid">
+            <div class="f-col">
+                <div class="footer-logo-container"><img src="assets/logo.png" alt="Morbi Tiles Logo"
+                        class="footer-logo"></div>
+                <p>MorbiTiles.store brings the tiles capital of India – Morbi, Gujarat – directly to you with
+                    factory-direct rates and export quality finishing.</p>
+                <p><i class="fa fa-envelope" style="margin-right: 10px; color: var(--secondary);"></i>
+                    info@morbitiles.store</p>
+                <p><i class="fa fa-phone" style="margin-right: 10px; color: var(--secondary);"></i> +91 82380 44415</p>
+            </div>
+            <div class="f-col">
+                <h4>Quick Links</h4>
+                <ul class="f-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Tile Catalogue</a></li>
+                    <li><a href="download.html">Download PDF</a></li>
+                </ul>
+            </div>
+            <div class="f-col">
+                <h4>Policy</h4>
+                <ul class="f-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="f-col">
+                <h4>Visit Us</h4>
+                <p>At: Old Ghuntu Road, Near Ghuntu village,</p>
+                <p>Ta: Morbi, Dist: Morbi, Gujarat - 363641</p>
+            </div>
+        </div>
+        <div class="f-bottom">
+            &copy; 2026 Morbi Tiles. All rights reserved.
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
