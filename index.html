@@ -2,228 +2,2085 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morbi Tiles | Premium Floor & Wall Tiles at Wholesale Prices</title>
-    <meta name="description"
-        content="Buy tiles directly from Morbi. Huge selection of vitrified, ceramic, and digital wall tiles.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morbi Tiles - Manufacturer & Exporter</title>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    /* CSS Variables */
+    :root {
+      --primary: #1a2d4e;
+      --primary-dark: #0d1b2a;
+      --accent: #e87722;
+      --accent-hover: #f5a623;
+      --white: #ffffff;
+      --light-gray: #f5f5f5;
+      --text-gray: #666666;
+      --font-headings: 'Poppins', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
+    }
+
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--font-headings);
+      font-weight: 600;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* Utilities */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--accent);
+    }
+
+    .section-title p {
+      color: var(--text-gray);
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      font-family: var(--font-headings);
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .btn-outline {
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .btn-solid {
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+    }
+
+    .btn-solid:hover {
+      background: var(--accent-hover);
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background-color: var(--primary-dark);
+      color: var(--white);
+      font-size: 13px;
+      padding: 8px 0;
+    }
+
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-bar-left {
+      display: flex;
+      gap: 20px;
+    }
+
+    .top-bar-left span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .top-bar-right {
+      display: flex;
+      gap: 15px;
+    }
+
+    .top-bar-right a {
+      transition: color 0.3s ease;
+    }
+
+    .top-bar-right a:hover {
+      color: var(--accent);
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--white);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .navbar.shrink {
+      padding: 5px 0;
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      transition: padding 0.3s ease;
+    }
+
+    .navbar.shrink .container {
+      padding: 10px 20px;
+    }
+
+    .logo {
+      font-family: var(--font-headings);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      font-family: var(--font-headings);
+      font-weight: 500;
+      color: var(--primary);
+      font-size: 15px;
+      transition: color 0.3s ease;
+      text-transform: uppercase;
+      padding: 10px 0;
+      display: inline-block;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Dropdown */
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: var(--white);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      min-width: 220px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      border-top: 3px solid var(--accent);
+      z-index: 10;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-menu li {
+      border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-menu li:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 12px 20px;
+      text-transform: none;
+      font-size: 14px;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: var(--light-gray);
+      color: var(--accent);
+      padding-left: 25px;
+      /* slight indent animation */
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: var(--primary);
+      transition: all 0.3s ease;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 600px;
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: var(--white);
+      width: 90%;
+      max-width: 800px;
+      z-index: 2;
+    }
+
+    .hero-content h4 {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    .hero-content h2 {
+      font-size: 3.5rem;
+      margin-bottom: 5px;
+    }
+
+    .hero-content h1 {
+      font-size: 4.5rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+
+    /* Hero Controls */
+    .hero-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--white);
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 24px;
+      transition: background 0.3s ease;
+      z-index: 2;
+      border: none;
+    }
+
+    .hero-control:hover {
+      background: var(--accent);
+    }
+
+    .hero-prev {
+      left: 30px;
+    }
+
+    .hero-next {
+      right: 30px;
+    }
+
+    .hero-dots {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+      z-index: 2;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .dot.active {
+      background-color: var(--white);
+    }
+
+    /* About Section */
+    .about {
+      padding: 80px 0;
+      background-color: var(--light-gray);
+    }
+
+    .about .container {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .about-img {
+      flex: 1;
+      position: relative;
+      padding-right: 20px;
+      padding-bottom: 20px;
+    }
+
+    .about-img img {
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      display: block;
+    }
+
+    .about-img::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 80%;
+      height: 80%;
+      border: 4px solid var(--accent);
+      z-index: -1;
+      border-radius: 4px;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-label {
+      display: inline-block;
+      background-color: rgba(232, 119, 34, 0.1);
+      color: var(--accent);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      font-family: var(--font-headings);
+    }
+
+    .about-text h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+      color: var(--text-gray);
+    }
+
+    .about-text ul {
+      margin-bottom: 30px;
+    }
+
+    .about-text li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 12px;
+      color: #444;
+      font-weight: 500;
+    }
+
+    .about-text li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    /* Products Section */
+    .products {
+      padding: 80px 0;
+      background-color: var(--white);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .product-card {
+      position: relative;
+      height: 320px;
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .product-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .product-card h3 {
+      color: var(--white);
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      transform: translateY(25px);
+      transition: transform 0.4s ease;
+    }
+
+    .product-link {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 600;
+      font-family: var(--font-headings);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .product-card:hover h3 {
+      transform: translateY(0);
+    }
+
+    .product-card:hover .product-link {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stats Section */
+    .stats {
+      background-color: var(--primary);
+      padding: 70px 0;
+      color: var(--white);
+    }
+
+    .stats .container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 3.5rem;
+      font-family: var(--font-headings);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .stat-number span:last-child {
+      color: var(--accent);
+      margin-left: 5px;
+    }
+
+    .stat-label {
+      color: #d1d5db;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 15px;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 80px;
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Knowledge Base Section */
+    .knowledge {
+      padding: 80px 0;
+      background-color: var(--light-gray);
+    }
+
+    .knowledge-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .knowledge-card {
+      background: var(--white);
+      padding: 35px 25px;
+      border-radius: 6px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      border: 1px solid #eee;
+    }
+
+    .knowledge-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+      border-color: var(--accent);
+    }
+
+    .k-icon {
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+
+    .knowledge-card h3 {
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-size: 1.25rem;
+    }
+
+    .knowledge-card p {
+      color: var(--text-gray);
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .k-link {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 14px;
+      font-family: var(--font-headings);
+      display: inline-block;
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .knowledge-card:hover .k-link {
+      border-color: var(--accent);
+    }
+
+    /* Export Countries Section */
+    .exports {
+      padding: 70px 0;
+      background-color: var(--white);
+    }
+
+    .export-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border: 1px solid #e0e0e0;
+      border-radius: 50px;
+      font-family: var(--font-headings);
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--primary);
+      transition: all 0.3s ease;
+      background: var(--white);
+    }
+
+    .badge:hover {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: var(--white);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(232, 119, 34, 0.2);
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 80px 0;
+      background-color: var(--light-gray);
+    }
+
+    .contact-wrap {
+      display: flex;
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-info {
+      flex: 0 0 40%;
+      padding: 60px 50px;
+      background-color: var(--primary);
+      color: var(--white);
+      position: relative;
+    }
+
+    .contact-info::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 100%);
+      pointer-events: none;
+    }
+
+    .contact-info .logo {
+      color: var(--white);
+      margin-bottom: 40px;
+      display: block;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .info-item i {
+      color: var(--accent);
+      font-size: 24px;
+      margin-top: 2px;
+    }
+
+    .info-item h4 {
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+      color: var(--white);
+    }
+
+    .info-item p {
+      color: #d1d5db;
+      font-size: 15px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 50px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .social-links a:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .contact-form {
+      flex: 1;
+      padding: 60px;
+    }
+
+    .contact-form h3 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 16px;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      background-color: #fafafa;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: var(--accent);
+      background-color: var(--white);
+      box-shadow: 0 0 0 3px rgba(232, 119, 34, 0.1);
+    }
+
+    textarea.form-control {
+      height: 160px;
+      resize: vertical;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-dark);
+      color: #888;
+      text-align: center;
+      padding: 30px 0;
+      font-size: 14px;
+    }
+
+    /* Floating Buttons */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .wa-label {
+      position: absolute;
+      right: 80px;
+      background: #25d366;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .whatsapp-float:hover .wa-label {
+      opacity: 1;
+      visibility: visible;
+      right: 90px;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 110px;
+      right: 35px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      z-index: 999;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+      border: none;
+    }
+
+    .scroll-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-top:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-3px);
+    }
+
+    .product-card .icon-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f9f9f9;
+      color: var(--primary);
+      transition: all 0.3s ease;
+    }
+
+    .product-card:hover .icon-container {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    .product-card .icon-container svg {
+      width: 80px;
+      height: 80px;
+      transition: transform 0.6s ease;
+    }
+
+    .product-card:hover .icon-container svg {
+      transform: scale(1.1);
+    }
+
+    /* Modal Styles */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      padding: 20px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background-color: var(--white);
+      width: 100%;
+      max-width: 800px;
+      max-height: 90vh;
+      border-radius: 8px;
+      position: relative;
+      padding: 40px;
+      overflow-y: auto;
+      animation: modalFadeIn 0.3s ease;
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    /* Knowledge Modules Styling */
+    .kb-module h3 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 25px;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+
+    /* Calculator */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .calc-result {
+      background: var(--light-gray);
+      padding: 20px;
+      border-radius: 6px;
+      border-left: 5px solid var(--accent);
+    }
+
+    .calc-result h4 {
+      margin-top: 0;
+    }
+
+    .calc-result p {
+      margin-bottom: 5px;
+    }
+
+    .calc-result p span {
+      font-weight: bold;
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+
+    /* Specs Table */
+    .specs-table-container {
+      overflow-x: auto;
+    }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      min-width: 600px;
+    }
+
+    .specs-table th,
+    .specs-table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+
+    .specs-table th {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    .specs-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    /* FAQ Accordion */
+    .accordion {
+      margin-top: 20px;
+    }
+
+    .accordion-item {
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      padding: 15px 20px;
+      background: #f4f4f4;
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--primary);
+    }
+
+    .accordion-header::after {
+      content: '+';
+      font-size: 20px;
+    }
+
+    .accordion-item.active .accordion-header {
+      background: #eee;
+    }
+
+    .accordion-item.active .accordion-header::after {
+      content: '-';
+    }
+
+    .accordion-body {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    .accordion-item.active .accordion-body {
+      padding: 15px 20px;
+      max-height: 300px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .knowledge-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-info {
+        padding: 40px 30px;
+      }
+
+      .contact-form {
+        padding: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-bar {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        flex-direction: column;
+        gap: 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+
+      .nav-links.active {
+        max-height: 500px;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 15px 20px;
+        border-bottom: 1px solid #f5f5f5;
+      }
+
+      .dropdown-menu {
+        position: static;
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+        box-shadow: none;
+        background-color: var(--light-gray);
+        display: none;
+        border-top: none;
+      }
+
+      .dropdown.active .dropdown-menu {
+        display: block;
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+
+      .hero-content h2 {
+        font-size: 2.2rem;
+      }
+
+      .hero {
+        height: 500px;
+      }
+
+      .hero-control {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+      }
+
+      .hero-prev {
+        left: 15px;
+      }
+
+      .hero-next {
+        right: 15px;
+      }
+
+      .about .container {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .about-img {
+        padding-right: 15px;
+        padding-bottom: 15px;
+      }
+
+      .about-img::after {
+        width: 100%;
+        height: 100%;
+        bottom: -15px;
+        right: -15px;
+      }
+
+      .stats .container {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .stat-divider {
+        display: none;
+      }
+
+      .contact-wrap {
+        flex-direction: column;
+      }
+
+      .contact-info {
+        flex: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .knowledge-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-content h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+      }
+
+      .contact-info,
+      .contact-form {
+        padding: 30px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <div class="header-top">
-            <div class="header-logo">
-                <a href="index.html"><img src="assets/logo.png" alt="Morbi Tiles Logo" class="main-logo"></a>
-            </div>
-            <div class="header-search">
-                <i class="fa fa-search"></i>
-                <input type="text" placeholder="Search for tiles, colors, sizes...">
-            </div>
-            <div class="header-actions">
-                <div class="action-item">
-                    <i class="fa fa-calculator"></i>
-                    <span>Calculator</span>
-                </div>
-                <div class="action-item">
-                    <i class="fa fa-heart"></i>
-                    <span>Wishlist</span>
-                </div>
-                <div class="action-item">
-                    <i class="fa fa-shopping-cart"></i>
-                    <span>Cart</span>
-                </div>
-                <a href="#" class="btn-signin">Sign In</a>
-            </div>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span>📞 +91 8238044415</span>
+        <span>✉️ sales@morbitiles.store</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="#" title="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+          </svg></a>
+        <a href="#" title="Instagram"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg></a>
+        <a href="#" title="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg></a>
+        <a href="#" title="WhatsApp"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-4.721 7.454c-2.113 0-4.187-.568-6.002-1.64l-.431-.256-4.461 1.17 1.19-4.347-.282-.449C1.657 14.246 1.084 12.164 1.084 9.999c0-4.917 4.001-8.918 8.92-8.918 2.384 0 4.625.928 6.31 2.614 1.685 1.686 2.613 3.927 2.613 6.311 0 4.918-4.004 8.919-8.918 8.919l-.001-.001z">
+            </path>
+          </svg></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="logo">Morbi<span>Tiles</span></a>
+
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li class="dropdown" id="products-dropdown">
+          <a href="#products">Products ▼</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Wall Tiles</a></li>
+            <li><a href="#">Floor Tiles</a></li>
+            <li><a href="#">Porcelain Tiles</a></li>
+            <li><a href="#">Slab Tiles</a></li>
+            <li><a href="#">Parking Tiles</a></li>
+            <li><a href="#">Sanitary Wares</a></li>
+            <li><a href="#">Wood Strip Tiles</a></li>
+            <li><a href="#">Step & Riser</a></li>
+          </ul>
+        </li>
+        <li><a href="#knowledge">Knowledge Base</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="slide active"
+      style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');">
+    </div>
+    <div class="slide"
+      style="background-image: url('https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');">
+    </div>
+    <div class="slide"
+      style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');">
+    </div>
+
+    <div class="hero-content">
+      <h4>Welcome to Morbi Tiles</h4>
+      <h2>Manufacturer & Exporter of</h2>
+      <h1>Digital Ceramic Tiles</h1>
+      <p>Modern Design with Quality Precision</p>
+    </div>
+
+    <button class="hero-control hero-prev" id="prevSlide">❮</button>
+    <button class="hero-control hero-next" id="nextSlide">❯</button>
+
+    <div class="hero-dots">
+      <div class="dot active" data-index="0"></div>
+      <div class="dot" data-index="1"></div>
+      <div class="dot" data-index="2"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-img">
+        <img src="https://picsum.photos/600/400?random=10" alt="Tiles Factory">
+      </div>
+      <div class="about-text">
+        <span class="about-label">Morbi Tiles and Bathware</span>
+        <h2>About Us</h2>
+        <p>MorbiTiles.store – The fastest way to buy tiles from Morbi without middleman confusion. Premium Floor & Wall
+          Tiles at Wholesale-Like Prices.</p>
+        <p>Looking for stylish, durable and long-lasting tiles for your home, office or commercial project? You're in
+          the right place. MorbiTiles.store brings the tiles capital of India – Morbi, Gujarat – directly to you with
+          factory-direct rates, huge design selection and fast delivery support.</p>
+        <ul>
+          <li>Latest digital floor & wall tile designs</li>
+          <li>Export quality finishing with on-time dispatch guarantee</li>
+          <li>Best pricing because we deal directly with Morbi manufacturers</li>
+          <li>Guidance for tile selection based on budget & theme</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-title">
+        <h2>Awesome Product Range</h2>
+        <p>Explore our wide collection of premium tiles designed for excellence</p>
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card" title="Wall Tiles (Ceramic)">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M3 15h18M9 3v18M15 3v18" />
+            </svg>
+          </div>
+          <div class="product-overlay">
+            <h3>Wall Tiles (Ceramic)</h3>
+            <span class="product-link">View More →</span>
+          </div>
         </div>
-        <div class="nav-container">
-            <ul class="nav-menu">
-                <li class="nav-item">All Tiles</li>
-                <li class="nav-item">Floor Tiles</li>
-                <li class="nav-item">Wall Tiles</li>
-                <li class="nav-item">Bathroom Tiles</li>
-                <li class="nav-item">Kitchen Tiles</li>
-                <li class="nav-item">Living Room</li>
-                <li class="nav-item">Outdoor Tiles</li>
-                <li class="nav-item">Parking Tiles</li>
-                <li class="nav-item">Ceramic Tiles</li>
-                <li class="nav-item">Vitrified Tiles</li>
-                <li class="nav-item">New Arrivals</li>
-            </ul>
+        <div class="product-card" title="Floor Tiles (Porcelain)">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+              <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12" />
+            </svg>
+          </div>
+          <div class="product-overlay">
+            <h3>Floor Tiles (Porcelain)</h3>
+            <span class="product-link">View More →</span>
+          </div>
         </div>
-    </header>
-
-    <main>
-        <section class="hero-slider"
-            style="background-image: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0)), url('assets/hero_tiles.png'); background-size: cover; background-position: center;">
-            <div class="hero-slide">
-                <div class="hero-content">
-                    <h1>Morbi's Finest directly to you.</h1>
-                    <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9;">The fastest way to buy tiles from
-                        Morbi without middleman confusion. Premium Floor & Wall Tiles at Wholesale-Like Prices.</p>
-                    <div class="cta-group">
-                        <a href="https://wa.me/918238044415" class="btn-signin" style="padding: 15px 30px;">Get Price
-                            List on WhatsApp</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="category-strip">
-            <div class="strip-title">
-                <h2>Categories to Bag</h2>
-                <div style="width: 50px; height: 3px; background: var(--secondary); margin: 10px auto;"></div>
-            </div>
-            <div class="icon-grid">
-                <div class="icon-card">
-                    <div class="icon-circle"><img src="assets/tile_marble_carrara.png" alt="Floor"></div>
-                    <span>Floor Tiles</span>
-                </div>
-                <div class="icon-card">
-                    <div class="icon-circle"><img src="assets/tile_slate_black.png" alt="Wall"></div>
-                    <span>Wall Tiles</span>
-                </div>
-                <div class="icon-card">
-                    <div class="icon-circle"><img src="assets/tile_wood_oak.png" alt="Vitrified"></div>
-                    <span>Vitrified</span>
-                </div>
-                <div class="icon-card">
-                    <div class="icon-circle"><img src="assets/tile_artisan_emerald.png" alt="Subway"></div>
-                    <span>Subway</span>
-                </div>
-                <div class="icon-card">
-                    <div class="icon-circle"><img src="assets/tile_marble_carrara.png" alt="Outdoor"></div>
-                    <span>Outdoor</span>
-                </div>
-                <div class="icon-card">
-                    <div class="icon-circle"><img src="assets/tile_slate_black.png" alt="Parking"></div>
-                    <span>Parking</span>
-                </div>
-                <div class="icon-card">
-                    <div class="icon-circle"><img src="assets/tile_wood_oak.png" alt="Kitchen"></div>
-                    <span>Kitchen</span>
-                </div>
-                <div class="icon-card">
-                    <div class="icon-circle"><img src="assets/tile_artisan_emerald.png" alt="Bathroom"></div>
-                    <span>Bathroom</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="product-section">
-            <div class="strip-title">
-                <h2>Our Best Picks</h2>
-                <p style="opacity: 0.6; margin-top: -30px; margin-bottom: 40px;">Selected styles for your dream home</p>
-            </div>
-            <div class="product-grid">
-                <div class="p-card">
-                    <span class="p-tag">Best Seller</span>
-                    <div class="p-img"><img src="assets/best_marble.png" alt="Royal Carrara"></div>
-                    <div class="p-info">
-                        <h4>Royal Carrara Vitrified</h4>
-                        <p style="font-size: 0.8rem; opacity: 0.6;">800x1600 mm | High Gloss</p>
-                        <div class="p-price">₹ 48.00 <span style="font-size: 0.8rem; font-weight: normal;">/
-                                sq.ft</span></div>
-                        <div class="p-actions">
-                            <div class="btn-sm">Quick View</div>
-                            <div class="btn-sm btn-primary-sm">Inquire</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-card">
-                    <span class="p-tag">New</span>
-                    <div class="p-img"><img src="assets/best_stone.png" alt="Industrial Stone"></div>
-                    <div class="p-info">
-                        <h4>Industrial Stone Matte</h4>
-                        <p style="font-size: 0.8rem; opacity: 0.6;">600x1200 mm | Rustic Finish</p>
-                        <div class="p-price">₹ 42.00 <span style="font-size: 0.8rem; font-weight: normal;">/
-                                sq.ft</span></div>
-                        <div class="p-actions">
-                            <div class="btn-sm">Quick View</div>
-                            <div class="btn-sm btn-primary-sm">Inquire</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-card">
-                    <div class="p-img"><img src="assets/best_wood.png" alt="Natural Oak"></div>
-                    <div class="p-info">
-                        <h4>Natural Oak Wood</h4>
-                        <p style="font-size: 0.8rem; opacity: 0.6;">200x1200 mm | Satin Texture</p>
-                        <div class="p-price">₹ 58.00 <span style="font-size: 0.8rem; font-weight: normal;">/
-                                sq.ft</span></div>
-                        <div class="p-actions">
-                            <div class="btn-sm">Quick View</div>
-                            <div class="btn-sm btn-primary-sm">Inquire</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-card">
-                    <div class="p-img"><img src="assets/best_terrazzo.png" alt="Modern Terrazzo"></div>
-                    <div class="p-info">
-                        <h4>Modern Terrazzo Grey</h4>
-                        <p style="font-size: 0.8rem; opacity: 0.6;">600x600 mm | Full Body</p>
-                        <div class="p-price">₹ 36.00 <span style="font-size: 0.8rem; font-weight: normal;">/
-                                sq.ft</span></div>
-                        <div class="p-actions">
-                            <div class="btn-sm">Quick View</div>
-                            <div class="btn-sm btn-primary-sm">Inquire</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="f-grid">
-            <div class="f-col">
-                <div class="footer-logo-container"><img src="assets/logo.png" alt="Morbi Tiles Logo"
-                        class="footer-logo"></div>
-                <p>MorbiTiles.store brings the tiles capital of India – Morbi, Gujarat – directly to you with
-                    factory-direct rates and export quality finishing.</p>
-                <p><i class="fa fa-envelope" style="margin-right: 10px; color: var(--secondary);"></i>
-                    info@morbitiles.store</p>
-                <p><i class="fa fa-phone" style="margin-right: 10px; color: var(--secondary);"></i> +91 82380 44415</p>
-            </div>
-            <div class="f-col">
-                <h4>Quick Links</h4>
-                <ul class="f-links">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="gallery.html">Tile Catalogue</a></li>
-                    <li><a href="download.html">Download PDF</a></li>
-                    <li><a href="contact.html">Track Order</a></li>
-                    <li><a href="contact.html">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="f-col">
-                <h4>Policy</h4>
-                <ul class="f-links">
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Shipping Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cancellation & Refund</a></li>
-                </ul>
-            </div>
-            <div class="f-col">
-                <h4>Visit Us</h4>
-                <p>At: Old Ghuntu Road, Near Ghuntu village,</p>
-                <p>Ta: Morbi, Dist: Morbi, Gujarat - 363641</p>
-                <div style="margin-top: 20px;">
-                    <a href="#" style="color: var(--secondary); font-size: 1.2rem; margin-right: 15px;"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="#" style="color: var(--secondary); font-size: 1.2rem; margin-right: 15px;"><i
-                            class="fab fa-facebook"></i></a>
-                    <a href="#" style="color: var(--secondary); font-size: 1.2rem;"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
+        <div class="product-card" title="Polished Porcelain Tiles">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-11.314l.707.707m11.314 11.314l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+            </svg>
+          </div>
+          <div class="product-overlay">
+            <h3>Polished Porcelain Tiles</h3>
+            <span class="product-link">View More →</span>
+          </div>
         </div>
-        <div class="f-bottom">
-            &copy; 2026 Morbi Tiles. Crafted for perfection.
+        <div class="product-card" title="Slab Tiles">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 17l10 5 10-5M2 12l10 5 10-5M12 2L2 7l10 5 10-5-10-5z" />
+            </svg>
+          </div>
+          <div class="product-overlay">
+            <h3>Slab Tiles</h3>
+            <span class="product-link">View More →</span>
+          </div>
         </div>
-    </footer>
+        <div class="product-card" title="Heavy Duty Parking Tiles">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="3" width="22" height="18" rx="2" ry="2" />
+              <path d="M7 13h10M7 17h10M12 8a2 2 0 110-4 2 2 0 010 4z" />
+            </svg>
+          </div>
+          <div class="product-overlay">
+            <h3>Heavy Duty Parking Tiles</h3>
+            <span class="product-link">View More →</span>
+          </div>
+        </div>
+        <div class="product-card" title="Sanitary Wares & Wash Basins">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 6h20v12H2zM6 18c0 2 2 2 2 2h8s2 0 2-2M2 9h20M2 15h20" />
+            </svg>
+          </div>
+          <div class="product-overlay">
+            <h3>Sanitary Wares & Wash Basins</h3>
+            <span class="product-link">View More →</span>
+          </div>
+        </div>
+        <div class="product-card" title="Wood Strip (Porcelain)">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 3h18v18H3zM9 3v18M15 3v18" />
+            </svg>
+          </div>
+          <div class="product-overlay">
+            <h3>Wood Strip (Porcelain)</h3>
+            <span class="product-link">View More →</span>
+          </div>
+        </div>
+        <div class="product-card" title="Step & Riser Tiles">
+          <div class="icon-container">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 20h-5v-5h-5v-5H7V5H2" />
+            </svg>
+          </div>
+          <div class="product-overlay">
+            <h3>Step & Riser Tiles</h3>
+            <span class="product-link">View More →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="main.js"></script>
+  <!-- Stats Section -->
+  <section class="stats" id="stats">
+    <div class="container">
+      <div class="stat-item">
+        <div class="stat-number"><span class="counter" data-target="25">0</span><span>+</span></div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number"><span class="counter" data-target="500">0</span><span>+</span></div>
+        <div class="stat-label">Designs</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number"><span class="counter" data-target="10">0</span><span>+</span></div>
+        <div class="stat-label">Certificates</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Knowledge Base Section -->
+  <section class="knowledge" id="knowledge">
+    <div class="container">
+      <div class="section-title">
+        <h2>Knowledge Base</h2>
+        <p>What's New in The World of Tiles</p>
+      </div>
+
+      <div class="knowledge-grid">
+        <div class="knowledge-card" onclick="openKBModal('calculator')">
+          <div class="k-icon">🧮</div>
+          <h3>Tiles Calculator</h3>
+          <p>Calculate tiles needed for any area easily.</p>
+          <span class="k-link" style="cursor:pointer">Open Calculator</span>
+        </div>
+        <div class="knowledge-card" onclick="openKBModal('specs')">
+          <div class="k-icon">📋</div>
+          <h3>Technical Specs</h3>
+          <p>Make the right choice with detailed specs.</p>
+          <span class="k-link" style="cursor:pointer">View Specs</span>
+        </div>
+        <div class="knowledge-card" onclick="openKBModal('guide')">
+          <div class="k-icon">🔧</div>
+          <h3>Tiles Laying Guide</h3>
+          <p>How to fix tiles the right way for longevity.</p>
+          <span class="k-link" style="cursor:pointer">Read Guide</span>
+        </div>
+        <div class="knowledge-card" onclick="openKBModal('faq')">
+          <div class="k-icon">❓</div>
+          <h3>FAQ</h3>
+          <p>Got questions? We have expert answers for you.</p>
+          <span class="k-link" style="cursor:pointer">View FAQs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Knowledge Base Modals -->
+  <div id="kb-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeKBModal()">&times;</span>
+      <div id="kb-content"></div>
+    </div>
+  </div>
+
+  <!-- Export Countries Section -->
+  <section class="exports">
+    <div class="container">
+      <div class="section-title" style="margin-bottom: 0;">
+        <h2>Our Exports</h2>
+      </div>
+      <div class="export-badges">
+        <div class="badge">🇺🇸 USA</div>
+        <div class="badge">🇦🇺 Australia</div>
+        <div class="badge">🇬🇧 UK</div>
+        <div class="badge">🇦🇪 UAE</div>
+        <div class="badge">🇿🇦 South Africa</div>
+        <div class="badge">🇨🇦 Canada</div>
+        <div class="badge">🇪🇸 Spain</div>
+        <div class="badge">🇴🇲 Oman</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-wrap">
+        <div class="contact-info">
+          <a href="#" class="logo">Morbi<span>Tiles</span></a>
+          <p style="margin-bottom: 40px; color: #d1d5db;">Premium Floor & Wall Tiles at Wholesale-Like Prices. Fast
+            delivery support.</p>
+
+          <div class="info-item">
+            <i>📍</i>
+            <div>
+              <h4>Address</h4>
+              <p>Morbi, Gujarat, India</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i>📞</i>
+            <div>
+              <h4>Call Us / WhatsApp</h4>
+              <p>+91 8238044415</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i>✉️</i>
+            <div>
+              <h4>Email Us</h4>
+              <p>sales@morbitiles.store</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i>🌐</i>
+            <div>
+              <h4>Website</h4>
+              <p>www.morbitiles.store</p>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="#" title="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg></a>
+            <a href="#" title="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg></a>
+            <a href="#" title="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg></a>
+            <a href="#" title="YouTube"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33 2.78 2.78 0 001.94 2C5.12 19.5 12 19.5 12 19.5s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.33 2.78 2.78 0 00-.46-5.33z">
+                </path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg></a>
+            <a href="#" title="WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-4.721 7.454c-2.113 0-4.187-.568-6.002-1.64l-.431-.256-4.461 1.17 1.19-4.347-.282-.449C1.657 14.246 1.084 12.164 1.084 9.999c0-4.917 4.001-8.918 8.92-8.918 2.384 0 4.625.928 6.31 2.614 1.685 1.686 2.613 3.927 2.613 6.311 0 4.918-4.004 8.919-8.918 8.919l-.001-.001z">
+                </path>
+              </svg></a>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h3>Get In Touch</h3>
+          <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-solid btn-submit">Submit Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Morbi Tiles. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating Buttons -->
+  <a href="https://wa.me/918238044415" target="_blank" class="whatsapp-float">
+    <span class="wa-label">message to get qoutes</span>
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-4.721 7.454c-2.113 0-4.187-.568-6.002-1.64l-.431-.256-4.461 1.17 1.19-4.347-.282-.449C1.657 14.246 1.084 12.164 1.084 9.999c0-4.917 4.001-8.918 8.92-8.918 2.384 0 4.625.928 6.31 2.614 1.685 1.686 2.613 3.927 2.613 6.311 0 4.918-4.004 8.919-8.918 8.919l-.001-.001z">
+      </path>
+    </svg>
+  </a>
+
+  <button class="scroll-top" id="scrollTopBtn">↑</button>
+
+  <!-- JavaScript -->
+  <script>
+    // 1. Hero Image Auto-Slider
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+
+      if (index >= slides.length) currentSlide = 0;
+      if (index < 0) currentSlide = slides.length - 1;
+
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+      currentSlide++;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide--;
+      showSlide(currentSlide);
+    }
+
+    function startSlider() {
+      slideInterval = setInterval(nextSlide, 4000);
+    }
+
+    function resetSlider() {
+      clearInterval(slideInterval);
+      startSlider();
+    }
+
+    document.getElementById('nextSlide').addEventListener('click', () => {
+      nextSlide();
+      resetSlider();
+    });
+
+    document.getElementById('prevSlide').addEventListener('click', () => {
+      prevSlide();
+      resetSlider();
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+        resetSlider();
+      });
+    });
+
+    startSlider();
+
+    // 2 & 3. Navbar Hamburger Toggle & Mobile Dropdown
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    const productsDropdown = document.getElementById('products-dropdown');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    if (window.innerWidth <= 768) {
+      productsDropdown.addEventListener('click', (e) => {
+        // If they click on the direct link or icon
+        if (e.target.tagName !== 'UL' && e.target.tagName !== 'LI') {
+          e.preventDefault();
+          productsDropdown.classList.toggle('active');
+        }
+      });
+    }
+
+    // 4. Sticky Navbar Shrink on Scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        navbar.classList.add('shrink');
+      } else {
+        navbar.classList.remove('shrink');
+      }
+    });
+
+    // 5. Counter Animation on Stats Section (IntersectionObserver)
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200; // lower = slower
+
+    if (window.IntersectionObserver) {
+      const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            const updateCount = () => {
+              const target = +counter.getAttribute('data-target');
+              const count = +counter.innerText;
+              const inc = target / speed;
+
+              if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(updateCount, 15);
+              } else {
+                counter.innerText = target;
+              }
+            };
+            updateCount();
+            observer.unobserve(counter); // Animate only once
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(counter => {
+        counterObserver.observe(counter);
+      });
+    }
+
+    // 6. Scroll-to-Top Button Show/Hide
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('show');
+      } else {
+        scrollTopBtn.classList.remove('show');
+      }
+    });
+
+    // Smooth scroll to top
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // 7. Smooth Scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        if (this.getAttribute('href') === '#') return;
+
+        // On mobile, if clicking products link, prevent scrolling
+        if (window.innerWidth <= 768 && this.parentElement.id === 'products-dropdown') {
+          return;
+        }
+
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          // Close mobile menu if open
+          navLinks.classList.remove('active');
+
+          const headerOffset = 70;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Knowledge Base Content Modules
+    const kbModules = {
+      calculator: `
+            <div class="kb-module">
+                <h3>Tiles Calculator</h3>
+                <div class="calc-grid">
+                    <div class="form-group">
+                        <label>Room Length (ft)</label>
+                        <input type="number" id="calc-length" class="form-control" value="10">
+                    </div>
+                    <div class="form-group">
+                        <label>Room Width (ft)</label>
+                        <input type="number" id="calc-width" class="form-control" value="10">
+                    </div>
+                    <div class="form-group">
+                        <label>Tile Size</label>
+                        <select id="tile-size" class="form-control">
+                            <option value="600x600">600x600 mm (2x2 ft)</option>
+                            <option value="600x1200">600x1200 mm (2x4 ft)</option>
+                            <option value="800x1600">800x1600 mm (2.6x5.2 ft)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Wastage (%)</label>
+                        <input type="number" id="calc-wastage" class="form-control" value="10">
+                    </div>
+                </div>
+                <button class="btn btn-solid" style="width:100%" onclick="calculateTiles()">Calculate Now</button>
+                <div id="calc-result" class="calc-result" style="margin-top:20px; display:none;">
+                    <h4>Result:</h4>
+                    <p>Total Area: <span id="res-area">0</span> sq.ft</p>
+                    <p>Tiles Needed: <span id="res-tiles">0</span> pieces</p>
+                    <p>Total Boxes: <span id="res-boxes">0</span> boxes (approx)</p>
+                </div>
+            </div>
+        `,
+      specs: `
+            <div class="kb-module">
+                <h3>Technical Specs</h3>
+                <p>Standard specifications for our Premium Morbi Ceramic & Porcelain Tiles:</p>
+                <div class="specs-table-container">
+                    <table class="specs-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Cermic Tiles</th>
+                                <th>Porcelain Tiles</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Water Absorption</td>
+                                <td>> 10%</td>
+                                <td>< 0.5%</td>
+                            </tr>
+                            <tr>
+                                <td>Breaking Strength</td>
+                                <td>600 N</td>
+                                <td>1300 N</td>
+                            </tr>
+                            <tr>
+                                <td>Modulus of Rupture</td>
+                                <td>22 N/mm²</td>
+                                <td>35 N/mm²</td>
+                            </tr>
+                            <tr>
+                                <td>Abrasion Resistance</td>
+                                <td>PEI II / III</td>
+                                <td>PEI IV / V</td>
+                            </tr>
+                            <tr>
+                                <td>Surface Quality</td>
+                                <td>Min. 95% free from visible defects</td>
+                                <td>Min. 95% free from visible defects</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        `,
+      guide: `
+            <div class="kb-module">
+                <h3>Tiles Laying Guide</h3>
+                <p>Follow these steps for a perfect tile installation:</p>
+                <ol style="margin-top: 20px; padding-left: 20px;">
+                    <li style="margin-bottom:15px"><strong>Surface Preparation:</strong> Ensure the floor or wall is level, clean, and dry.</li>
+                    <li style="margin-bottom:15px"><strong>Planning:</strong> Lay out tiles without adhesive to check the pattern and minimize cuts.</li>
+                    <li style="margin-bottom:15px"><strong>Adhesive Application:</strong> Use a high-quality tile adhesive and apply with a notched trowel.</li>
+                    <li style="margin-bottom:15px"><strong>Laying:</strong> Press tiles firmly into the adhesive. Use tile spacers for uniform gaps.</li>
+                    <li style="margin-bottom:15px"><strong>Cutting:</strong> Use a professional tile cutter for corner or edge pieces.</li>
+                    <li style="margin-bottom:15px"><strong>Grouting:</strong> After 24 hours, fill the joints with grout of a matching color.</li>
+                    <li style="margin-bottom:15px"><strong>Cleaning:</strong> Wipe off excess grout with a damp sponge before it dries.</li>
+                </ol>
+            </div>
+        `,
+      faq: `
+            <div class="kb-module">
+                <h3>Industry FAQs</h3>
+                <div class="accordion">
+                    <div class="accordion-item" onclick="toggleAccordion(this)">
+                        <div class="accordion-header">Why is Morbi the tile hub of India?</div>
+                        <div class="accordion-body">Morbi produces over 90% of India's ceramic tiles due to its strategic location, availability of raw materials, and massive infrastructure of over 800 factories.</div>
+                    </div>
+                    <div class="accordion-item" onclick="toggleAccordion(this)">
+                        <div class="accordion-header">What is the MOQ for exporting tiles?</div>
+                        <div class="accordion-body">The Minimum Order Quantity for export is typically 1 full container load (FCL), but we can mix different designs within the same container.</div>
+                    </div>
+                    <div class="accordion-item" onclick="toggleAccordion(this)">
+                        <div class="accordion-header">How do I choose between Ceramic and Porcelain?</div>
+                        <div class="accordion-body">Ceramic is great for walls and medium-traffic floors. Porcelain is denser, more durable, and water-resistant, making it ideal for high-traffic areas and outdoors.</div>
+                    </div>
+                     <div class="accordion-item" onclick="toggleAccordion(this)">
+                        <div class="accordion-header">What sizes are most popular in Morbi?</div>
+                        <div class="accordion-body">The most popular sizes are 600x600mm, 600x1200mm for flooring, and 300x450mm or 300x600mm for wall tiles.</div>
+                    </div>
+                </div>
+            </div>
+        `
+    };
+
+    // Modal Management
+    function openKBModal(type) {
+      const modal = document.getElementById('kb-modal');
+      const content = document.getElementById('kb-content');
+      content.innerHTML = kbModules[type];
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent scroll
+    }
+
+    function closeKBModal() {
+      const modal = document.getElementById('kb-modal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto'; // Restore scroll
+    }
+
+    // Close modal on click outside
+    window.onclick = function (event) {
+      const modal = document.getElementById('kb-modal');
+      if (event.target == modal) {
+        closeKBModal();
+      }
+    }
+
+    // Calculator Logic
+    function calculateTiles() {
+      const length = parseFloat(document.getElementById('calc-length').value);
+      const width = parseFloat(document.getElementById('calc-width').value);
+      const size = document.getElementById('tile-size').value;
+      const wastage = parseFloat(document.getElementById('calc-wastage').value);
+
+      const area = length * width;
+      const totalAreaWithWastage = area * (1 + wastage / 100);
+
+      let tileSizeSqFt = 4; // default for 600x600
+      let piecesPerBox = 4;
+
+      if (size === '600x1200') {
+        tileSizeSqFt = 7.75;
+        piecesPerBox = 2;
+      } else if (size === '800x1600') {
+        tileSizeSqFt = 13.77;
+        piecesPerBox = 2;
+      } else {
+        tileSizeSqFt = 3.87; // exact 600x600 in sqft
+        piecesPerBox = 4;
+      }
+
+      const tilesNeeded = Math.ceil(totalAreaWithWastage / tileSizeSqFt);
+      const boxesNeeded = Math.ceil(tilesNeeded / piecesPerBox);
+
+      document.getElementById('res-area').innerText = area.toFixed(2);
+      document.getElementById('res-tiles').innerText = tilesNeeded;
+      document.getElementById('res-boxes').innerText = boxesNeeded;
+      document.getElementById('calc-result').style.display = 'block';
+    }
+
+    // Accordion Toggle
+    function toggleAccordion(element) {
+      element.classList.toggle('active');
+    }
+  </script>
 </body>
 
 </html>
