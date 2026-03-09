@@ -98,7 +98,10 @@
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="slide active">
-      <img src="/assets/hero1.webp" alt="Digital Ceramic Tiles" fetchpriority="high">
+      <picture>
+        <source media="(max-width: 768px)" srcset="/assets/hero1-mobile.webp">
+        <img src="/assets/hero1.webp" alt="Digital Ceramic Tiles" fetchpriority="high">
+      </picture>
     </div>
     <div class="slide" style="background-image: url('/assets/hero2.webp');">
     </div>

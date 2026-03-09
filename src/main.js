@@ -54,6 +54,11 @@ dots.forEach((dot, index) => {
 
 startSlider();
 
+// Enable transitions after initial fast paint to avoid LCP Render Delay
+setTimeout(() => {
+  slides.forEach(slide => slide.classList.add('ready'));
+}, 100);
+
 // 2 & 3. Navbar Hamburger Toggle & Mobile Dropdown
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
