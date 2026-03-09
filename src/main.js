@@ -1,171 +1,187 @@
-    // 1. Hero Image Auto-Slider
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    let currentSlide = 0;
-    let slideInterval;
+// 1. Hero Image Auto-Slider
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+let currentSlide = 0;
+let slideInterval;
 
-    function showSlide(index) {
-      slides.forEach(slide => slide.classList.remove('active'));
-      dots.forEach(dot => dot.classList.remove('active'));
+function showSlide(index) {
+  slides.forEach(slide => slide.classList.remove('active'));
+  dots.forEach(dot => dot.classList.remove('active'));
 
-      if (index >= slides.length) currentSlide = 0;
-      if (index < 0) currentSlide = slides.length - 1;
+  if (index >= slides.length) currentSlide = 0;
+  if (index < 0) currentSlide = slides.length - 1;
 
-      slides[currentSlide].classList.add('active');
-      dots[currentSlide].classList.add('active');
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+}
+
+function nextSlide() {
+  currentSlide++;
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide--;
+  showSlide(currentSlide);
+}
+
+function startSlider() {
+  slideInterval = setInterval(nextSlide, 4000);
+}
+
+function resetSlider() {
+  clearInterval(slideInterval);
+  startSlider();
+}
+
+document.getElementById('nextSlide').addEventListener('click', () => {
+  nextSlide();
+  resetSlider();
+});
+
+document.getElementById('prevSlide').addEventListener('click', () => {
+  prevSlide();
+  resetSlider();
+});
+
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    currentSlide = index;
+    showSlide(currentSlide);
+    resetSlider();
+  });
+});
+
+startSlider();
+
+// 2 & 3. Navbar Hamburger Toggle & Mobile Dropdown
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+const productsDropdown = document.getElementById('products-dropdown');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+if (window.innerWidth <= 768) {
+  productsDropdown.addEventListener('click', (e) => {
+    // If they click on the direct link or icon
+    if (e.target.tagName !== 'UL' && e.target.tagName !== 'LI') {
+      e.preventDefault();
+      productsDropdown.classList.toggle('active');
     }
+  });
+}
 
-    function nextSlide() {
-      currentSlide++;
-      showSlide(currentSlide);
-    }
+// 4. Sticky Navbar Shrink on Scroll
+const navbar = document.getElementById('navbar');
+let isScrolling = false;
 
-    function prevSlide() {
-      currentSlide--;
-      showSlide(currentSlide);
-    }
-
-    function startSlider() {
-      slideInterval = setInterval(nextSlide, 4000);
-    }
-
-    function resetSlider() {
-      clearInterval(slideInterval);
-      startSlider();
-    }
-
-    document.getElementById('nextSlide').addEventListener('click', () => {
-      nextSlide();
-      resetSlider();
-    });
-
-    document.getElementById('prevSlide').addEventListener('click', () => {
-      prevSlide();
-      resetSlider();
-    });
-
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        currentSlide = index;
-        showSlide(currentSlide);
-        resetSlider();
-      });
-    });
-
-    startSlider();
-
-    // 2 & 3. Navbar Hamburger Toggle & Mobile Dropdown
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    const productsDropdown = document.getElementById('products-dropdown');
-
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-
-    if (window.innerWidth <= 768) {
-      productsDropdown.addEventListener('click', (e) => {
-        // If they click on the direct link or icon
-        if (e.target.tagName !== 'UL' && e.target.tagName !== 'LI') {
-          e.preventDefault();
-          productsDropdown.classList.toggle('active');
-        }
-      });
-    }
-
-    // 4. Sticky Navbar Shrink on Scroll
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
+window.addEventListener('scroll', () => {
+  if (!isScrolling) {
+    window.requestAnimationFrame(() => {
       if (window.scrollY > 80) {
         navbar.classList.add('shrink');
       } else {
         navbar.classList.remove('shrink');
       }
+      isScrolling = false;
     });
+    isScrolling = true;
+  }
+});
 
-    // 5. Counter Animation on Stats Section (IntersectionObserver)
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200; // lower = slower
+// 5. Counter Animation on Stats Section (IntersectionObserver)
+const counters = document.querySelectorAll('.counter');
+const speed = 200; // lower = slower
 
-    if (window.IntersectionObserver) {
-      const counterObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const counter = entry.target;
-            const updateCount = () => {
-              const target = +counter.getAttribute('data-target');
-              const count = +counter.innerText;
-              const inc = target / speed;
+if (window.IntersectionObserver) {
+  const counterObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const inc = target / speed;
 
-              if (count < target) {
-                counter.innerText = Math.ceil(count + inc);
-                setTimeout(updateCount, 15);
-              } else {
-                counter.innerText = target;
-              }
-            };
-            updateCount();
-            observer.unobserve(counter); // Animate only once
+          if (count < target) {
+            window.requestAnimationFrame(updateCount);
+            counter.innerText = Math.ceil(count + inc);
+          } else {
+            counter.innerText = target;
           }
-        });
-      }, { threshold: 0.5 });
+        };
+        updateCount();
+        observer.unobserve(counter); // Animate only once
+      }
+    });
+  }, { threshold: 0.5 });
 
-      counters.forEach(counter => {
-        counterObserver.observe(counter);
-      });
-    }
+  counters.forEach(counter => {
+    counterObserver.observe(counter);
+  });
+}
 
-    // 6. Scroll-to-Top Button Show/Hide
-    const scrollTopBtn = document.getElementById('scrollTopBtn');
-    window.addEventListener('scroll', () => {
+// 6. Scroll-to-Top Button Show/Hide
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+let isBtnScrolling = false;
+
+window.addEventListener('scroll', () => {
+  if (!isBtnScrolling) {
+    window.requestAnimationFrame(() => {
       if (window.scrollY > 300) {
         scrollTopBtn.classList.add('show');
       } else {
         scrollTopBtn.classList.remove('show');
       }
+      isBtnScrolling = false;
     });
+    isBtnScrolling = true;
+  }
+});
 
-    // Smooth scroll to top
-    scrollTopBtn.addEventListener('click', () => {
+// Smooth scroll to top
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// 7. Smooth Scroll for all anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    if (this.getAttribute('href') === '#') return;
+
+    // On mobile, if clicking products link, prevent scrolling
+    if (window.innerWidth <= 768 && this.parentElement.id === 'products-dropdown') {
+      return;
+    }
+
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+
+    if (targetElement) {
+      // Close mobile menu if open
+      navLinks.classList.remove('active');
+
+      const headerOffset = 70;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
       window.scrollTo({
-        top: 0,
+        top: offsetPosition,
         behavior: 'smooth'
       });
-    });
+    }
+  });
+});
 
-    // 7. Smooth Scroll for all anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        if (this.getAttribute('href') === '#') return;
-
-        // On mobile, if clicking products link, prevent scrolling
-        if (window.innerWidth <= 768 && this.parentElement.id === 'products-dropdown') {
-          return;
-        }
-
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-
-        if (targetElement) {
-          // Close mobile menu if open
-          navLinks.classList.remove('active');
-
-          const headerOffset = 70;
-          const elementPosition = targetElement.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-
-    // Knowledge Base Content Modules
-    const kbModules = {
-      calculator: `
+// Knowledge Base Content Modules
+const kbModules = {
+  calculator: `
             <div class="kb-module">
                 <h3>Tiles Calculator</h3>
                 <div class="calc-grid">
@@ -199,7 +215,7 @@
                 </div>
             </div>
         `,
-      specs: `
+  specs: `
             <div class="kb-module">
                 <h3>Technical Specs</h3>
                 <p>Standard specifications for our Premium Morbi Ceramic & Porcelain Tiles:</p>
@@ -243,7 +259,7 @@
                 </div>
             </div>
         `,
-      guide: `
+  guide: `
             <div class="kb-module">
                 <h3>Tiles Laying Guide</h3>
                 <p>Follow these steps for a perfect tile installation:</p>
@@ -258,7 +274,7 @@
                 </ol>
             </div>
         `,
-      faq: `
+  faq: `
             <div class="kb-module">
                 <h3>Industry FAQs</h3>
                 <div class="accordion">
@@ -281,71 +297,71 @@
                 </div>
             </div>
         `
-    };
+};
 
-    // Modal Management
-    function openKBModal(type) {
-      const modal = document.getElementById('kb-modal');
-      const content = document.getElementById('kb-content');
-      content.innerHTML = kbModules[type];
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Prevent scroll
-    }
+// Modal Management
+function openKBModal(type) {
+  const modal = document.getElementById('kb-modal');
+  const content = document.getElementById('kb-content');
+  content.innerHTML = kbModules[type];
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden'; // Prevent scroll
+}
 
-    function closeKBModal() {
-      const modal = document.getElementById('kb-modal');
-      modal.classList.remove('active');
-      document.body.style.overflow = 'auto'; // Restore scroll
-    }
+function closeKBModal() {
+  const modal = document.getElementById('kb-modal');
+  modal.classList.remove('active');
+  document.body.style.overflow = 'auto'; // Restore scroll
+}
 
-    // Close modal on click outside
-    window.onclick = function (event) {
-      const modal = document.getElementById('kb-modal');
-      if (event.target == modal) {
-        closeKBModal();
-      }
-    }
+// Close modal on click outside
+window.onclick = function (event) {
+  const modal = document.getElementById('kb-modal');
+  if (event.target == modal) {
+    closeKBModal();
+  }
+}
 
-    // Calculator Logic
-    function calculateTiles() {
-      const length = parseFloat(document.getElementById('calc-length').value);
-      const width = parseFloat(document.getElementById('calc-width').value);
-      const size = document.getElementById('tile-size').value;
-      const wastage = parseFloat(document.getElementById('calc-wastage').value);
+// Calculator Logic
+function calculateTiles() {
+  const length = parseFloat(document.getElementById('calc-length').value);
+  const width = parseFloat(document.getElementById('calc-width').value);
+  const size = document.getElementById('tile-size').value;
+  const wastage = parseFloat(document.getElementById('calc-wastage').value);
 
-      const area = length * width;
-      const totalAreaWithWastage = area * (1 + wastage / 100);
+  const area = length * width;
+  const totalAreaWithWastage = area * (1 + wastage / 100);
 
-      let tileSizeSqFt = 4; // default for 600x600
-      let piecesPerBox = 4;
+  let tileSizeSqFt = 4; // default for 600x600
+  let piecesPerBox = 4;
 
-      if (size === '600x1200') {
-        tileSizeSqFt = 7.75;
-        piecesPerBox = 2;
-      } else if (size === '800x1600') {
-        tileSizeSqFt = 13.77;
-        piecesPerBox = 2;
-      } else {
-        tileSizeSqFt = 3.87; // exact 600x600 in sqft
-        piecesPerBox = 4;
-      }
+  if (size === '600x1200') {
+    tileSizeSqFt = 7.75;
+    piecesPerBox = 2;
+  } else if (size === '800x1600') {
+    tileSizeSqFt = 13.77;
+    piecesPerBox = 2;
+  } else {
+    tileSizeSqFt = 3.87; // exact 600x600 in sqft
+    piecesPerBox = 4;
+  }
 
-      const tilesNeeded = Math.ceil(totalAreaWithWastage / tileSizeSqFt);
-      const boxesNeeded = Math.ceil(tilesNeeded / piecesPerBox);
+  const tilesNeeded = Math.ceil(totalAreaWithWastage / tileSizeSqFt);
+  const boxesNeeded = Math.ceil(tilesNeeded / piecesPerBox);
 
-      document.getElementById('res-area').innerText = area.toFixed(2);
-      document.getElementById('res-tiles').innerText = tilesNeeded;
-      document.getElementById('res-boxes').innerText = boxesNeeded;
-      document.getElementById('calc-result').style.display = 'block';
-    }
+  document.getElementById('res-area').innerText = area.toFixed(2);
+  document.getElementById('res-tiles').innerText = tilesNeeded;
+  document.getElementById('res-boxes').innerText = boxesNeeded;
+  document.getElementById('calc-result').style.display = 'block';
+}
 
-    // Accordion Toggle
-    function toggleAccordion(element) {
-      element.classList.toggle('active');
-    }
+// Accordion Toggle
+function toggleAccordion(element) {
+  element.classList.toggle('active');
+}
 
-    // Expose functions to the global window object
-    window.openKBModal = openKBModal;
-    window.closeKBModal = closeKBModal;
-    window.calculateTiles = calculateTiles;
-    window.toggleAccordion = toggleAccordion;
+// Expose functions to the global window object
+window.openKBModal = openKBModal;
+window.closeKBModal = closeKBModal;
+window.calculateTiles = calculateTiles;
+window.toggleAccordion = toggleAccordion;
