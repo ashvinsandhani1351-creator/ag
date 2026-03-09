@@ -1,3 +1,14 @@
+    // 1. Hero Image Auto-Slider
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+
+      if (index >= slides.length) currentSlide = 0;
       if (index < 0) currentSlide = slides.length - 1;
 
       slides[currentSlide].classList.add('active');
@@ -332,7 +343,3 @@
     function toggleAccordion(element) {
       element.classList.toggle('active');
     }
-  </script>
-</body>
-
-</html>

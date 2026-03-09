@@ -8,11 +8,24 @@
   <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  
   <!-- PageSpeed Optimizations -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" as="image">
+  <link rel="preload" href="/src/style.css" as="style">
   <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span>📞 +91 8238044415</span>
+        <span>✉️ sales@morbitiles.store</span>
       </div>
       <div class="top-bar-right">
         <a href="#" title="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
@@ -102,7 +115,7 @@
   <section class="about" id="about">
     <div class="container">
       <div class="about-img">
-        <img src="https://picsum.photos/600/400?random=10" alt="Tiles Factory">
+        <img src="https://picsum.photos/600/400?random=10" alt="Tiles Factory" loading="lazy">
       </div>
       <div class="about-text">
         <span class="about-label">Morbi Tiles and Bathware</span>
@@ -598,6 +611,7 @@
   <button class="scroll-top" id="scrollTopBtn">↑</button>
 
   <!-- JavaScript -->
-  <script>
-    // 1. Hero Image Auto-Slider
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
