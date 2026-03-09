@@ -343,3 +343,9 @@
     function toggleAccordion(element) {
       element.classList.toggle('active');
     }
+
+    // Expose functions to the global window object
+    window.openKBModal = openKBModal;
+    window.closeKBModal = closeKBModal;
+    window.calculateTiles = calculateTiles;
+    window.toggleAccordion = toggleAccordion;
