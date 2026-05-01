@@ -4,7 +4,8 @@ const pages = [
   {
     filename: 'wall-tiles.html',
     title: 'Wall Tiles (Ceramic)',
-    desc: 'Premium ceramic wall tiles for modern interiors.',
+    desc: 'Premium ceramic wall tiles for modern interiors by Morbi Tiles. Elevate your living spaces with moisture-resistant, easy-to-clean ceramic wall tiles.',
+    keywords: 'ceramic wall tiles, morbi wall tiles, bathroom tiles, kitchen backsplash, moisture resistant tiles, decorative wall tiles, digital print tiles',
     bg: '#1e3a8a',
     image: '/assets/wall-tiles.png',
     price: 'Starting from ₹35 / sq.ft',
@@ -24,7 +25,8 @@ const pages = [
   {
     filename: 'floor-tiles.html',
     title: 'Floor Tiles (Porcelain)',
-    desc: 'Durable and stylish porcelain floor tiles for every space.',
+    desc: 'Durable and stylish porcelain floor tiles by Morbi Tiles. Discover high load capacity, scratch-resistant porcelain tiles for heavy traffic areas.',
+    keywords: 'porcelain floor tiles, morbi floor tiles, durable flooring, heavy traffic tiles, matte floor tiles, glossy floor tiles, scratch resistant tiles',
     bg: '#3b82f6',
     image: '/assets/floor-tiles.png',
     price: 'Starting from ₹45 / sq.ft',
@@ -44,7 +46,8 @@ const pages = [
   {
     filename: 'polished-porcelain.html',
     title: 'Polished Porcelain Tiles',
-    desc: 'High-gloss polished porcelain tiles for a luxurious finish.',
+    desc: 'Achieve a luxurious, mirror-like finish with Polished Porcelain Tiles from Morbi. Nano-polished, stain-resistant tiles for elegant spaces.',
+    keywords: 'polished porcelain tiles, high gloss tiles, morbi polished tiles, luxury floor tiles, nano polished tiles, stain resistant porcelain, hotel lobby tiles',
     bg: '#2563eb',
     image: '/assets/polished-porcelain.png',
     price: 'Starting from ₹60 / sq.ft',
@@ -64,7 +67,8 @@ const pages = [
   {
     filename: 'slab-tiles.html',
     title: 'Slab Tiles',
-    desc: 'Large format slab tiles for seamless architectural designs.',
+    desc: 'Transform your space with Large Format Slab Tiles by Morbi Tiles. Create seamless architectural designs with minimal grout lines for floors and countertops.',
+    keywords: 'slab tiles, large format tiles, seamless floor tiles, morbi slab tiles, porcelain slabs, kitchen countertop tiles, large porcelain tiles',
     bg: '#1d4ed8',
     image: '/assets/slab-tiles.png',
     price: 'Starting from ₹85 / sq.ft',
@@ -84,7 +88,8 @@ const pages = [
   {
     filename: 'parking-tiles.html',
     title: 'Heavy Duty Parking Tiles',
-    desc: 'Tough and durable parking tiles designed for high-stress areas.',
+    desc: 'Tough, anti-skid parking tiles from Morbi Tiles designed for high-stress areas. Perfect for driveways, garages, and commercial outdoor spaces.',
+    keywords: 'parking tiles, heavy duty tiles, outdoor tiles, anti-skid tiles, driveway tiles, morbi parking tiles, frost proof outdoor tiles, weather resistant flooring',
     bg: '#4338ca',
     image: '/assets/parking-tiles.png',
     price: 'Starting from ₹40 / sq.ft',
@@ -104,7 +109,8 @@ const pages = [
   {
     filename: 'sanitary-wares.html',
     title: 'Sanitary Wares & Wash Basins',
-    desc: 'Elegant sanitary wares and wash basins for modern bathrooms.',
+    desc: 'Elegant and hygienic sanitary wares and wash basins by Morbi Tiles. Featuring anti-bacterial glaze and modern ergonomic designs.',
+    keywords: 'sanitary wares, wash basins, morbi sanitary ware, water closets, bathroom fixtures, anti-bacterial glaze, modern toilets, ceramic wash basin',
     bg: '#312e81',
     image: '/assets/sanitary-wares.png',
     price: 'Starting from ₹1500 / unit',
@@ -124,7 +130,8 @@ const pages = [
   {
     filename: 'wood-strip.html',
     title: 'Wood Strip (Porcelain)',
-    desc: 'The warmth of wood with the durability of porcelain.',
+    desc: 'The warmth of natural wood with the durability of porcelain. Morbi Wood Strip Tiles offer a waterproof, termite-proof hardwood alternative.',
+    keywords: 'wood strip tiles, wooden floor tiles, porcelain wood look, waterproof wood flooring, morbi wooden tiles, timber look tiles, hardwood alternative',
     bg: '#8b5cf6',
     image: '/assets/wood-strip.png',
     price: 'Starting from ₹55 / sq.ft',
@@ -144,7 +151,8 @@ const pages = [
   {
     filename: 'step-riser.html',
     title: 'Step & Riser Tiles',
-    desc: 'Safe and stylish step and riser tiles for staircases.',
+    desc: 'Safe and stylish staircase step and riser tiles by Morbi Tiles. High-strength tiles with anti-slip grooves for indoor and outdoor stairs.',
+    keywords: 'step and riser tiles, staircase tiles, anti-slip stair tiles, morbi step tiles, bullnose step tiles, stair risers, indoor stairs, outdoor stair tiles',
     bg: '#6d28d9',
     image: '/assets/step-riser.png',
     price: 'Starting from ₹65 / pair',
@@ -169,7 +177,20 @@ const template = (page) => `<!DOCTYPE html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${page.title} - Morbi Tiles</title>
+  
+  <!-- SEO Meta Tags -->
   <meta name="description" content="${page.desc}">
+  <meta name="keywords" content="${page.keywords}">
+  <meta name="author" content="Morbi Tiles">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Social Meta Tags -->
+  <meta property="og:title" content="${page.title} - Morbi Tiles">
+  <meta property="og:description" content="${page.desc}">
+  <meta property="og:image" content="https://www.morbitiles.store${page.image}">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://www.morbitiles.store/${page.filename}">
+  <meta property="og:site_name" content="Morbi Tiles">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
