@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products - Morbi Tiles</title>
+  <meta name="description"
+    content="Explore our wide range of premium floor & wall tiles at MorbiTiles.store.">
+  <!-- Google Fonts - Asynchronous Loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700&display=swap"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700&display=swap">
+  </noscript>
+
+  <link rel="preload" href="/src/style.css" as="style">
+  <link rel="stylesheet" href="/src/style.css">
+  <style>
+    .products-hero {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .products-hero h1 { font-size: 3rem; margin-bottom: 10px; }
+    .products-hero p { font-size: 1.2rem; opacity: 0.9; }
+
+    .detailed-product-list {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      margin-top: 40px;
+    }
+
+    .detailed-product-card {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease;
+    }
+
+    @media (min-width: 768px) {
+      .detailed-product-card {
+        flex-direction: row;
+      }
+      .detailed-product-card:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    .detailed-product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .detailed-product-image {
+      flex: 1;
+      min-height: 300px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .detailed-product-content {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .detailed-product-content h3 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #1e293b;
+    }
+
+    .detailed-product-content p {
+      font-size: 1.1rem;
+      color: #475569;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .detailed-product-content .btn {
+      align-self: flex-start;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span>📞 +91 8238044415</span>
+        <span>✉️ sales@morbitiles.store</span>
+      </div>
+      <div class="top-bar-right">
+        <!-- Social links same as index -->
+        <a href="#" title="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg></a>
+        <a href="#" title="Instagram"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+        <a href="#" title="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="/index.html" class="logo">Morbi<span>Tiles</span></a>
+
+      <div class="hamburger" id="hamburger" role="button" aria-label="Menu" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/index.html#home">Home</a></li>
+        <li><a href="/index.html#about">About Us</a></li>
+        <li class="dropdown" id="products-dropdown">
+          <a href="products.html" class="active">Products ▼</a>
+          <ul class="dropdown-menu">
+            <li><a href="wall-tiles.html">Wall Tiles</a></li>
+            <li><a href="floor-tiles.html">Floor Tiles</a></li>
+            <li><a href="polished-porcelain.html">Porcelain Tiles</a></li>
+            <li><a href="slab-tiles.html">Slab Tiles</a></li>
+            <li><a href="parking-tiles.html">Parking Tiles</a></li>
+            <li><a href="sanitary-wares.html">Sanitary Wares</a></li>
+            <li><a href="wood-strip.html">Wood Strip Tiles</a></li>
+            <li><a href="step-riser.html">Step & Riser</a></li>
+          </ul>
+        </li>
+        <li><a href="/index.html#knowledge">Knowledge Base</a></li>
+        <li><a href="/index.html#articles">Blog</a></li>
+        <li><a href="/index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Products Hero -->
+  <section class="products-hero">
+    <div class="container">
+      <h1>Our Products Catalog</h1>
+      <p>Discover the finest collection of premium tiles with detailed specifications from the ceramic capital of India.</p>
+    </div>
+  </section>
+
+  <!-- Products Section (Detailed List) -->
+  <section class="products" id="products" style="padding-top: 40px;">
+    <div class="container">
+      
+      <div class="detailed-product-list">
+        
+        <div class="detailed-product-card">
+          <div class="detailed-product-image" style="background-image: url('/assets/wall-tiles.png');"></div>
+          <div class="detailed-product-content">
+            <h3>Wall Tiles (Ceramic)</h3>
+            <p>Elevate your living spaces with our stunning collection of Ceramic Wall Tiles. Perfect for bathrooms, kitchens, and feature walls, these tiles offer exceptional moisture resistance and are easy to clean. With advancements in digital printing, we can replicate any natural look.</p>
+            <a href="wall-tiles.html" class="btn btn-outline" style="border-color: #1e3a8a; color: #1e3a8a;">Read Detailed Article →</a>
+          </div>
+        </div>
+
+        <div class="detailed-product-card">
+          <div class="detailed-product-image" style="background-image: url('/assets/floor-tiles.png');"></div>
+          <div class="detailed-product-content">
+            <h3>Floor Tiles (Porcelain)</h3>
+            <p>Our Porcelain Floor Tiles are designed for heavy traffic areas, combining beauty with unmatched durability. Fired at extremely high temperatures, porcelain is incredibly dense and less porous than standard ceramic, making it the perfect long-term investment for your home.</p>
+            <a href="floor-tiles.html" class="btn btn-outline" style="border-color: #1e3a8a; color: #1e3a8a;">Read Detailed Article →</a>
+          </div>
+        </div>
+
+        <div class="detailed-product-card">
+          <div class="detailed-product-image" style="background-image: url('/assets/polished-porcelain.png');"></div>
+          <div class="detailed-product-content">
+            <h3>Polished Porcelain Tiles</h3>
+            <p>Achieve a seamless, mirror-like finish with our Polished Porcelain Tiles. The state-of-the-art nano-polished surface not only enhances the grand aesthetic appeal but completely prevents stain absorption. Ideal for luxury hotel lobbies and upscale living areas.</p>
+            <a href="polished-porcelain.html" class="btn btn-outline" style="border-color: #1e3a8a; color: #1e3a8a;">Read Detailed Article →</a>
+          </div>
+        </div>
+
+        <div class="detailed-product-card">
+          <div class="detailed-product-image" style="background-image: url('/assets/slab-tiles.png');"></div>
+          <div class="detailed-product-content">
+            <h3>Slab Tiles</h3>
+            <p>Create breathtaking, continuous surfaces with our Large Format Slab Tiles. Ideal for expansive floors, kitchen countertops, and grand commercial spaces. By drastically reducing grout lines, these massive tiles offer a sleek, contemporary, and highly expansive aesthetic.</p>
+            <a href="slab-tiles.html" class="btn btn-outline" style="border-color: #1e3a8a; color: #1e3a8a;">Read Detailed Article →</a>
+          </div>
+        </div>
+
+        <div class="detailed-product-card">
+          <div class="detailed-product-image" style="background-image: url('/assets/parking-tiles.png');"></div>
+          <div class="detailed-product-content">
+            <h3>Heavy Duty Parking Tiles</h3>
+            <p>Built to withstand extreme weights and harsh outdoor conditions. Engineered with a significantly higher thickness and a specialized body composition, they provide immense breaking strength and feature anti-skid surfaces to ensure maximum safety in driveways and garages.</p>
+            <a href="parking-tiles.html" class="btn btn-outline" style="border-color: #1e3a8a; color: #1e3a8a;">Read Detailed Article →</a>
+          </div>
+        </div>
+
+        <div class="detailed-product-card">
+          <div class="detailed-product-image" style="background-image: url('/assets/sanitary-wares.png');"></div>
+          <div class="detailed-product-content">
+            <h3>Sanitary Wares & Wash Basins</h3>
+            <p>Complete your bathroom design with our exquisite range. Combining ergonomic design with superior hygiene, our ceramics are treated with an advanced anti-bacterial glaze fired at high temperatures. This ultra-smooth finish prevents the buildup of limescale and waste.</p>
+            <a href="sanitary-wares.html" class="btn btn-outline" style="border-color: #1e3a8a; color: #1e3a8a;">Read Detailed Article →</a>
+          </div>
+        </div>
+
+        <div class="detailed-product-card">
+          <div class="detailed-product-image" style="background-image: url('/assets/wood-strip.png');"></div>
+          <div class="detailed-product-content">
+            <h3>Wood Strip (Porcelain)</h3>
+            <p>Enjoy the natural, rustic charm of hardwood without the maintenance. Our Wood Strip Porcelain Tiles replicate the texture and grain of real wood while offering total water resistance, making them perfect for kitchens and bathrooms where real wood would easily warp.</p>
+            <a href="wood-strip.html" class="btn btn-outline" style="border-color: #1e3a8a; color: #1e3a8a;">Read Detailed Article →</a>
+          </div>
+        </div>
+
+        <div class="detailed-product-card">
+          <div class="detailed-product-image" style="background-image: url('/assets/step-riser.png');"></div>
+          <div class="detailed-product-content">
+            <h3>Step & Riser Tiles</h3>
+            <p>Design safe and visually appealing staircases. We offer perfectly matched treads and risers to ensure a seamless design flow. Manufactured with integrated anti-slip grooves, they provide crucial traction to significantly reduce the risk of slips and falls.</p>
+            <a href="step-riser.html" class="btn btn-outline" style="border-color: #1e3a8a; color: #1e3a8a;">Read Detailed Article →</a>
+          </div>
+        </div>
+
+      </div>
+      
+      <div style="margin-top: 80px; text-align: center;">
+        <h3 style="margin-bottom: 20px; font-size: 2rem;">Ready to find your perfect tile?</h3>
+        <p style="margin-bottom: 30px; color: #555; font-size: 1.1rem;">Download our full catalog to explore our complete range of sizes, finishes, and specific designs.</p>
+        <a href="https://wa.me/918238044415" class="btn btn-primary" style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; font-size: 1.2rem;">Download Catalog 2026</a>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="margin-top: 60px;">
+    <div class="container">
+      <p>&copy; 2024 Morbi Tiles. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to Top">↑</button>
+
+  <!-- JavaScript -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
